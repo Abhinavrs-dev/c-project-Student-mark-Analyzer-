@@ -1,132 +1,86 @@
-#include <iostream>
-using namespace std;
+🎓 Student Marks Analyzer (C++)
+A simple console-based Student Marks Analyzer developed using C++. This program allows users to enter student marks and automatically generates a performance report with total marks, average, highest and lowest marks, and pass/fail statistics.
+🚀 Features
 
+Student Mark Input: Enter marks for multiple students.
+Total Marks: Calculates the combined marks of all students.
+Average Marks: Calculates the average score.
+Highest Marks: Identifies the highest score.
+Lowest Marks: Identifies the lowest score.
+Pass Count: Counts students who scored 40 or above.
+Fail Count: Counts students who scored below 40.
+Input Validation: Accepts student counts between 1 and 100.
+Multiple Analysis: Analyze another group without restarting the program.
 
-int findTotal(int marks[], int n) {
-    int total = 0;
+🛠️ Technologies Used
 
-    for (int i = 0; i < n; i++) {
-        total += marks[i];
-    }
+C++
+Standard Input/Output (iostream)
+Arrays
+Functions
+Loops
+Conditional Statements
 
-    return total;
-}
+💻 How to Run
+1. Clone the repository
+git clone YOUR_REPOSITORY_URL
 
+2. Navigate to the project folder
+cd Student-Marks-Analyzer
 
-double totalAverage(int total, int n) {
-    double average = (double)total / n;
+3. Compile the program
+g++ main.cpp -o analyzer
 
-    return average;
-}
+4. Run the program
+./analyzer
 
+For Windows:
+analyzer.exe
 
-int highestMarks(int marks[], int n) {
-    int highest = marks[0];
+📊 Sample Output
+Enter Student Number: 3
 
-    for (int i = 1; i < n; i++) {
-        if (marks[i] > highest) {
-            highest = marks[i];
-        }
-    }
+Enter Marks for Student 1: 85
+Enter Marks for Student 2: 35
+Enter Marks for Student 3: 70
 
-    return highest;
-}
+========== STUDENT MARKS ==========
+Student 1: 85
+Student 2: 35
+Student 3: 70
 
-int lowestMark(int marks[], int n) {
-    int lowest = marks[0];
+========== STUDENT REPORT ==========
 
-    for (int i = 1; i < n; i++) {
-        if (marks[i] < lowest) {
-            lowest = marks[i];
-        }
-    }
+Total Marks       : 190
+Average Marks     : 63.3333
+Highest Marks     : 85
+Lowest Marks      : 35
+Passed Students   : 2
+Failed Students   : 1
 
-    return lowest;
-}
+Analyse another group? (q/w):
 
+📚 Learning Outcomes
+This project helped me understand and practice:
 
-int countPassed(int marks[], int n) {
-    int passed = 0;
+Working with arrays in C++.
+Creating and calling user-defined functions.
+Passing arrays as function arguments.
+Using loops for calculations.
+Implementing conditional logic.
+Performing basic input validation.
 
-    for (int i = 0; i < n; i++) {
-        if (marks[i] >= 40) {
-            passed++;
-        }
-    }
+🔮 Future Improvements
 
-    return passed;
-}
+Add individual student names.
+Generate grades based on marks.
+Display individual student performance.
+Store student records in a file.
+Create a graphical user interface.
 
+👨‍💻 Developer
+Abhinav
+BCA – Full Stack Development Student
 
-int countFailed(int marks[], int n) {
-    int failed = 0;
-
-    for (int i = 0; i < n; i++) {
-        if (marks[i] < 40) {
-            failed++;
-        }
-    }
-
-    return failed;
-}
-
-
-int main() {
-
-    char choice;
-
-    do {
-
-        int marks[100];
-        int n;
-
-
-        cout << "Enter Student Number: ";
-        cin >> n;
-
-        while (n < 1 || n > 100) {
-            cout << "Invalid Count! Enter between 1 and 100." << endl;
-            cout << "Enter Student Number: ";
-            cin >> n;
-        }
-
-
-        for (int i = 0; i < n; i++) {
-            cout << "Enter Marks for Student " << i + 1 << ": ";
-            cin >> marks[i];
-        }
-
-
-        cout << "========== STUDENT MARKS ==========" << endl;
-
-        for (int i = 0; i < n; i++) {
-            cout << "Student " << i + 1 << ": "
-                 << marks[i] << endl;
-        }
-
-        int total = findTotal(marks, n);
-        double average = totalAverage(total, n);
-        int highest = highestMarks(marks, n);
-        int lowest = lowestMark(marks, n);
-        int passed = countPassed(marks, n);
-        int failed = countFailed(marks, n);
-
-cout << "=*=*=*=*=*=* STUDENT REPORT =*=*=*=*=*=*=" << endl;
-
-        cout << "Total Marks       : " << total << endl;
-        cout << "Average Marks     : " << average << endl;
-        cout << "Highest Marks     : " << highest << endl;
-        cout << "Lowest Marks      : " << lowest << endl;
-        cout << "Passed Students   : " << passed << endl;
-        cout << "Failed Students   : " << failed << endl;
-
-
-        cout << "Analyse another group? (q/w): ";
-        cin >> choice;
-
-    } while (choice == 'q' || choice == 'Q');
-
-    cout << "Analyzer Exit!!" << endl;
-
-    return 0;
-}
+⭐ If you find this project useful, consider giving the repository a star!
+Built with C++ as a beginner programming project.
